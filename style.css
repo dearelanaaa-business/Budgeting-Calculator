@@ -1,0 +1,175 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  color: #444;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tablink {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #d0f0c0; /* Light green for inactive tabs */
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tablink:hover {
+  background-color: #c8e6c9;
+}
+
+.tablink.active {
+  background-color: #4CAF50; /* Green for active tab */
+  color: white;
+}
+
+.tabcontent {
+  display: none;
+  width: 100%;
+}
+
+.tabcontent.active {
+  display: block;
+}
+
+.container-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+}
+
+.container-inputs label,
+.container-inputs input {
+  text-align: center;
+  display: block;
+  width: 100%;
+  max-width: 350px; /* Ensure inputs aren't too wide */
+  margin: 0 auto 10px;
+}
+
+.container-inputs input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.category-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-container h3 {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.subcategory {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.subcategory label {
+  flex: 1;
+  padding-right: 10px;
+  font-size: 1em;
+}
+
+.subcategory input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.output-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+}
+
+.output-container p {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+.center-salary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.center-salary label,
+.center-salary input {
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+
+.center-heading {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+/* Wrap the entire container that holds all categories in a grid */
+.category-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px; /* space between the categories */
+  margin: 0 auto;
+  width: 100%; /* Ensure it takes full width */
+}
+
+/* Ensure each category container takes full width of its grid column */
+.category-container {
+  width: 100%; /* Make sure each container takes the full width available */
+}
