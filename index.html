@@ -1,0 +1,1280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budgeting Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Budgeting Calculator</h1>
+
+      <div class="tabs">
+        <button class="tablink active" onclick="openTab(event, 'Monthly')">
+          📅 Monthly Expenses
+        </button>
+        <button class="tablink" onclick="openTab(event, 'Annual')">
+          📆 Annual Expenses
+        </button>
+      </div>
+
+      <!-- Monthly Expenses Tab -->
+      <div id="Monthly" class="tabcontent active">
+        <h2 class="center-heading">Monthly Expenses</h2>
+
+
+        <!-- Monthly Salary -->
+        <div class="monthly-salary-container center-salary">
+  <label for="monthly-salary">💰 Monthly Salary:</label>
+  <input type="number" id="monthly-salary" />
+</div>
+
+
+        <!-- Housing -->
+        <div class="category-wrapper">
+        <div class="category-container">
+          <h3>🏠 Housing</h3>
+          <div class="subcategory">
+            <label for="rent-room"
+              >Rent / Room rental / Maintenance fees:</label
+            >
+            <input
+              type="number"
+              id="rent-room"
+              name="rent-room"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="minor-repairs">Minor home repairs:</label>
+            <input
+              type="number"
+              id="minor-repairs"
+              name="minor-repairs"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="home-insurance">Home insurance (monthly):</label>
+            <input
+              type="number"
+              id="home-insurance"
+              name="home-insurance"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Utilities & Bills -->
+        <div class="category-container">
+          <h3>💡 Utilities & Bills</h3>
+          <div class="subcategory">
+            <label for="electricity">Electricity:</label>
+            <input
+              type="number"
+              id="electricity"
+              name="electricity"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="water">Water:</label>
+            <input
+              type="number"
+              id="water"
+              name="water"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="internet">Internet:</label>
+            <input
+              type="number"
+              id="internet"
+              name="internet"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="mobile-plan">Mobile plan:</label>
+            <input
+              type="number"
+              id="mobile-plan"
+              name="mobile-plan"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="streaming">Streaming services:</label>
+            <input
+              type="number"
+              id="streaming"
+              name="streaming"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="astro-cable">Astro / Cable TV:</label>
+            <input
+              type="number"
+              id="astro-cable"
+              name="astro-cable"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="cloud-storage">Cloud storage:</label>
+            <input
+              type="number"
+              id="cloud-storage"
+              name="cloud-storage"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Food & Groceries -->
+        <div class="category-container">
+          <h3>🍽️ Food & Groceries</h3>
+          <div class="subcategory"> 
+            <label for="groceries">Groceries:</label>
+            <input
+              type="number"
+              id="groceries"
+              name="groceries"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="eating-out">Eating out:</label>
+            <input
+              type="number"
+              id="eating-out"
+              name="eating-out"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="food-delivery">Food delivery:</label>
+            <input
+              type="number"
+              id="food-delivery"
+              name="food-delivery"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="snacks">Snacks / bubble tea / coffee:</label>
+            <input
+              type="number"
+              id="snacks"
+              name="snacks"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Transportation -->
+        <div class="category-container">
+          <h3>🚗 Transportation</h3>
+          <div class="subcategory">
+            <label for="petrol">Petrol:</label>
+            <input
+              type="number"
+              id="petrol"
+              name="petrol"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="parking-fees">Parking fees:</label>
+            <input
+              type="number"
+              id="parking-fees"
+              name="parking-fees"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="toll-reload">Toll reloads (Touch 'n Go):</label>
+            <input
+              type="number"
+              id="toll-reload"
+              name="toll-reload"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="car-servicing">Basic car servicing:</label>
+            <input
+              type="number"
+              id="car-servicing"
+              name="car-servicing"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Insurance & Protection -->
+        <div class="category-container">
+          <h3>🛡️ Insurance & Protection</h3>
+          <div class="subcategory">
+            <label for="medical-card">Medical card (monthly):</label>
+            <input
+              type="number"
+              id="medical-card"
+              name="medical-card"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="life-insurance">Life insurance (monthly):</label>
+            <input
+              type="number"
+              id="life-insurance"
+              name="life-insurance"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="pa-insurance">Personal accident (PA) insurance:</label>
+            <input
+              type="number"
+              id="pa-insurance"
+              name="pa-insurance"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="critical-illness"
+              >Critical illness rider (monthly):</label
+            >
+            <input
+              type="number"
+              id="critical-illness"
+              name="critical-illness"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Personal Care -->
+        <div class="category-container">
+          <h3> 💅 Personal Care & Beauty</h3>
+          <div class="subcategory">
+            <label for="skincare">Skincare:</label>
+            <input
+              type="number"
+              id="skincare"
+              name="skincare"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="makeup">Makeup:</label>
+            <input
+              type="number"
+              id="makeup"
+              name="makeup"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="feminine-hygiene">Feminine hygiene products:</label>
+            <input
+              type="number"
+              id="feminine-hygiene"
+              name="feminine-hygiene"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="haircare">Haircare:</label>
+            <input
+              type="number"
+              id="haircare"
+              name="haircare"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="supplements">Supplements / vitamins:</label>
+            <input
+              type="number"
+              id="supplements"
+              name="supplements"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Hair, Beauty & Wellness -->
+        <div class="category-container">
+          <h3>💇‍♀️ Hair, Beauty & Wellness</h3>
+          <div class="subcategory">
+            <label for="haircut">Haircut or trim:</label>
+            <input
+              type="number"
+              id="haircut"
+              name="haircut"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="monthly-facial">Monthly facial / nails / waxing:</label>
+            <input
+              type="number"
+              id="monthly-facial"
+              name="monthly-facial"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="massage-therapy">Massage / body therapy:</label>
+            <input
+              type="number"
+              id="massage-therapy"
+              name="massage-therapy"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Health & Fitness -->
+        <div class="category-container">
+          <h3>🏥 Health & Wellness</h3>
+          <div class="subcategory">
+            <label for="gym-membership">Gym or yoga membership:</label>
+            <input
+              type="number"
+              id="gym-membership"
+              name="gym-membership"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="fitness-supplements">Supplements:</label>
+            <input
+              type="number"
+              id="fitness-supplements"
+              name="fitness-supplements"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="therapy-counseling"
+              >Therapy / counselling sessions:</label
+            >
+            <input
+              type="number"
+              id="therapy-counseling"
+              name="therapy-counseling"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Clothing & Accessories -->
+        <div class="category-container">
+          <h3>👗 Clothing & Accessories</h3>
+          <div class="subcategory">
+            <label for="wardrobe-topups">Monthly wardrobe top-ups:</label>
+            <input
+              type="number"
+              id="wardrobe-topups"
+              name="wardrobe-topups"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="workwear">Workwear:</label>
+            <input
+              type="number"
+              id="workwear"
+              name="workwear"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="seasonal-items">Seasonal items:</label>
+            <input
+              type="number"
+              id="seasonal-items"
+              name="seasonal-items"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="accessories">Accessories:</label>
+            <input
+              type="number"
+              id="accessories"
+              name="accessories"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Lifestyle & Leisure -->
+        <div class="category-container">
+          <h3>🎉 Lifestyle & Leisure</h3>
+          <div class="subcategory">
+            <label for="hobbies">Hobbies:</label>
+            <input
+              type="number"
+              id="hobbies"
+              name="hobbies"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="ebooks">Books / e-books:</label>
+            <input
+              type="number"
+              id="ebooks"
+              name="ebooks"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="weekend-activities">Weekend activities:</label>
+            <input
+              type="number"
+              id="weekend-activities"
+              name="weekend-activities"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="digital-movies">Digital movie rentals:</label>
+            <input
+              type="number"
+              id="digital-movies"
+              name="digital-movies"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Subscriptions & Apps -->
+        <div class="category-container">
+          <h3>📱 Subscriptions & Apps</h3>
+          <div class="subcategory">
+            <label for="life360">Life360:</label>
+            <input
+              type="number"
+              id="life360"
+              name="life360"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="spotify">Spotify:</label>
+            <input
+              type="number"
+              id="spotify"
+              name="spotify"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="icloud">iCloud:</label>
+            <input
+              type="number"
+              id="icloud"
+              name="icloud"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="celcomdigi">CelcomDigi:</label>
+            <input
+              type="number"
+              id="celcomdigi"
+              name="celcomdigi"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="dailybean">DailyBean:</label>
+            <input
+              type="number"
+              id="dailybean"
+              name="dailybea"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="muslimpro">Muslim Pro +:</label>
+            <input
+              type="number"
+              id="muslimpro"
+              name="muslimpro"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="meitu">Meitu:</label>
+            <input
+              type="number"
+              id="meitu"
+              name="meitu"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Social & Gifting -->
+        <div class="category-container">
+          <h3>🎁 Social & Gifting</h3>
+          <div class="subcategory">
+            <label for="birthday-gifts">Birthday gifts:</label>
+            <input
+              type="number"
+              id="birthday-gifts"
+              name="birthday-gifts"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="meals-friends">Meals with friends:</label>
+            <input
+              type="number"
+              id="meals-friends"
+              name="meals-friends"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="spontaneous-gifts">Spontaneous gifts:</label>
+            <input
+              type="number"
+              id="spontaneous-gifts"
+              name="spontaneous-gifts"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Parents / Family Support -->
+        <div class="category-container">
+          <h3>👨‍👩‍👧‍👦 Parents / Family Support</h3>
+          <div class="subcategory">
+            <label for="monthly-allowance">Monthly allowance:</label>
+            <input
+              type="number"
+              id="monthly-allowance"
+              name="monthly-allowance"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Savings & Investments -->
+        <div class="category-container">
+          <h3>💰 Savings & Investments</h3>
+          <div class="subcategory">
+            <label for="emergency-fund">Emergency fund top-up:</label>
+            <input
+              type="number"
+              id="emergency-fund"
+              name="emergency-fund"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="regular-savings">Regular savings:</label>
+            <input
+              type="number"
+              id="regular-savings"
+              name="regular-savings"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="monthly-asb-tabunghaji"
+              >Monthly ASB / Tabung Haji:</label
+            >
+            <input
+              type="number"
+              id="monthly-asb-tabunghaji"
+              name="monthly-asb-tabunghaji"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="robo-investments">Robo-investments:</label>
+            <input
+              type="number"
+              id="robo-investments"
+              name="robo-investments"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="sinking-funds">Sinking funds:</label>
+            <input
+              type="number"
+              id="sinking-funds"
+              name="sinking-funds"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Pet Expenses -->
+        <div class="category-container">
+          <h3>🐾 Pet Expenses</h3>
+          <div class="subcategory">
+            <label for="pet-food">Pet food:</label>
+            <input
+              type="number"
+              id="pet-food"
+              name="pet-food"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="pet-treats">Treats:</label>
+            <input
+              type="number"
+              id="pet-treats"
+              name="pet-treats"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="litter-pads">Litter / pee pads:</label>
+            <input
+              type="number"
+              id="litter-pads"
+              name="litter-pads"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="flea-tick-meds">Flea/tick meds:</label>
+            <input
+              type="number"
+              id="flea-tick-meds"
+              name="flea-tick-meds"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="pet-grooming">Grooming at home:</label>
+            <input
+              type="number"
+              id="pet-grooming"
+              name="pet-grooming"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="pet-shampoo">Pet shampoo / wipes:</label>
+            <input
+              type="number"
+              id="pet-shampoo"
+              name="pet-shampoo"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="pet-toys">Toys / accessories:</label>
+            <input
+              type="number"
+              id="pet-toys"
+              name="pet-toys"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="pet-insurance">Pet insurance (monthly):</label>
+            <input
+              type="number"
+              id="pet-insurance"
+              name="pet-insurance"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Side Hustle / Business Tools -->
+        <div class="category-container">
+          <h3>💼 Side Hustle / Business Tools</h3>
+          <div class="subcategory">
+            <label for="capcut-pro">Capcut Pro:</label>
+            <input
+              type="number"
+              id="capcut-pro"
+              name="capcut-pro"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="packaging-replenishment"
+              >Packaging replenishment:</label
+            >
+            <input
+              type="number"
+              id="packaging-replenishment"
+              name="packaging-replenishment"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="printing-costs">Printing:</label>
+            <input
+              type="number"
+              id="printing-costs"
+              name="printing-costs"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Charity & Zakat -->
+        <div class="category-container">
+          <h3>🤲 Charity & Zakat</h3>
+          <div class="subcategory">
+            <label for="regular-sadaqah">Regular sadaqah:</label>
+            <input
+              type="number"
+              id="regular-sadaqah"
+              name="regular-sadaqah"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Baby Planning -->
+        <div class="category-container">
+          <h3>🤰 Baby Planning</h3>
+          <div class="subcategory">
+            <label for="prenatal-vitamins"
+              >Prenatal vitamins & supplements:</label
+            >
+            <input
+              type="number"
+              id="prenatal-vitamins"
+              name="prenatal-vitamins"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="monthly-checkups">Monthly checkups:</label>
+            <input
+              type="number"
+              id="monthly-checkups"
+              name="monthly-checkups"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="scans-tests">Scans & tests:</label>
+            <input
+              type="number"
+              id="scans-tests"
+              name="scans-tests"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="maternity-skincare">Maternity skincare:</label>
+            <input
+              type="number"
+              id="maternity-skincare"
+              name="maternity-skincare"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="pregnancy-snacks">Pregnancy-safe snacks:</label>
+            <input
+              type="number"
+              id="pregnancy-snacks"
+              name="pregnancy-snacks"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="baby-planning-books">Baby planning books:</label>
+            <input
+              type="number"
+              id="baby-planning-books"
+              name="baby-planning-books"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="small-baby-gear">Small baby gear:</label>
+            <input
+              type="number"
+              id="small-baby-gear"
+              name="small-baby-gear"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+
+        <!-- Child Schooling -->
+        <div class="category-container">
+          <h3>👨‍👩‍👧‍👦 Child Schooling</h3>
+          <div class="subcategory">
+            <label for="school-fees">School fees:</label>
+            <input
+              type="number"
+              id="school-fees"
+              name="school-fees"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="school-transport">Transportation:</label>
+            <input
+              type="number"
+              id="school-transport"
+              name="school-transport"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="pocket-money">Pocket money:</label>
+            <input
+              type="number"
+              id="pocket-money"
+              name="pocket-money"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="tuition">Tuition / enrichment classes:</label>
+            <input
+              type="number"
+              id="tuition"
+              name="tuition"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="uniform-laundry">Uniform laundry:</label>
+            <input
+              type="number"
+              id="uniform-laundry"
+              name="uniform-laundry"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="school-meals">Meals / lunchbox:</label>
+            <input
+              type="number"
+              id="school-meals"
+              name="school-meals"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="stationery">Stationery:</label>
+            <input
+              type="number"
+              id="stationery"
+              name="stationery"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="co-curricular-fees">Co-curricular fees:</label>
+            <input
+              type="number"
+              id="co-curricular-fees"
+              name="co-curricular-fees"
+              oninput="calculateMonthly()"
+            />
+          </div>
+        </div>
+      </div>
+
+        <!-- Output and Buttons Container -->
+        <div class="output-container">
+          <p>Total Expenses: <span id="monthly-total-expenses">0</span></p>
+          <p>
+            Remaining Balance: <span id="monthly-remaining-balance">0</span>
+          </p>
+          <button type="button" onclick="clearAll()">Clear All</button>
+          <button type="button" onclick="printReport()">Print</button>
+        </div>
+      </div>
+
+      <!-- Annual Expenses Tab -->
+      <div id="Annual" class="tabcontent">
+        <h2 class="center-heading">Annual Expenses</h2>
+
+
+        <!-- Annual Salary -->
+        <div class="annual-salary-container center-salary">
+  <label for="annual-salary">💵 Annual Salary:</label>
+  <input type="number" id="annual-salary" />
+</div>
+
+<div class="category-wrapper">
+  <div class="category-container">
+  <h3>🏠 Housing</h3>
+  <div class="subcategory">
+    <label for="property-tax">Property tax (2x/year):</label>
+    <input type="number" id="property-tax" name="property-tax" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="annual-home-insurance">Annual home insurance (if paid yearly):</label>
+    <input type="number" id="annual-home-insurance" name="annual-home-insurance" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="major-home-maintenance">Major home maintenance (repainting, pest control):</label>
+    <input type="number" id="major-home-maintenance" name="major-home-maintenance" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>🚗 Transportation</h3>
+  <div class="subcategory">
+    <label for="car-road-tax">Car road tax:</label>
+    <input type="number" id="car-road-tax" name="car-road-tax" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="car-insurance">Car insurance:</label>
+    <input type="number" id="car-insurance" name="car-insurance" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="major-servicing">Major servicing (brakes, battery):</label>
+    <input type="number" id="major-servicing" name="major-servicing" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="puspakom-inspection">Puspakom inspection (if applicable):</label>
+    <input type="number" id="puspakom-inspection" name="puspakom-inspection" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>🛡️ Insurance & Protection</h3>
+  <div class="subcategory">
+    <label for="annual-premium-plans">Annual premium plans:</label>
+    <input type="number" id="annual-premium-plans" name="annual-premium-plans" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="insurance-review">Insurance review or upgrade:</label>
+    <input type="number" id="insurance-review" name="insurance-review" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>🩺 Health & Medical</h3>
+  <div class="subcategory">
+    <label for="annual-medical-checkup">Annual medical checkup:</label>
+    <input type="number" id="annual-medical-checkup" name="annual-medical-checkup" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="dental-scaling">Dental scaling and polishing:</label>
+    <input type="number" id="dental-scaling" name="dental-scaling" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="eye-exam">Eye exam / new glasses:</label>
+    <input type="number" id="eye-exam" name="eye-exam" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="pap-smear">Pap smear / women's health screening:</label>
+    <input type="number" id="pap-smear" name="pap-smear" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="gynae-checkup">Gynae checkup:</label>
+    <input type="number" id="gynae-checkup" name="gynae-checkup" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>💇‍♀️ Personal Care & Beauty</h3>
+  <div class="subcategory">
+    <label for="hair-coloring">Hair coloring / chemical treatment:</label>
+    <input type="number" id="hair-coloring" name="hair-coloring" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="spa-facial">Spa / facial package renewals:</label>
+    <input type="number" id="spa-facial" name="spa-facial" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="bulk-skincare">Bulk skincare purchases:</label>
+    <input type="number" id="bulk-skincare" name="bulk-skincare" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="salon-equipment">Salon equipment (hairdryer, curler):</label>
+    <input type="number" id="salon-equipment" name="salon-equipment" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>👗 Clothing & Accessories</h3>
+  <div class="subcategory">
+    <label for="baju-raya">Baju Raya / Festive outfits:</label>
+    <input type="number" id="baju-raya" name="baju-raya" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="wedding-formalwear">Wedding/formalwear:</label>
+    <input type="number" id="wedding-formalwear" name="wedding-formalwear" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="shoes-handbag">Shoes / handbag / watch:</label>
+    <input type="number" id="shoes-handbag" name="shoes-handbag" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="winter-wear">Winter wear (if traveling):</label>
+    <input type="number" id="winter-wear" name="winter-wear" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>🎉 Social & Gifting</h3>
+  <div class="subcategory">
+    <label for="duit-raya">Duit Raya / hampers:</label>
+    <input type="number" id="duit-raya" name="duit-raya" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="wedding-gifts">Wedding gifts:</label>
+    <input type="number" id="wedding-gifts" name="wedding-gifts" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="year-end-celebrations">Year-end celebrations:</label>
+    <input type="number" id="year-end-celebrations" name="year-end-celebrations" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="holiday-gifting">Holiday gifting:</label>
+    <input type="number" id="holiday-gifting" name="holiday-gifting" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>✈️ Travel</h3>
+  <div class="subcategory">
+    <label for="flight-tickets">Flight tickets:</label>
+    <input type="number" id="flight-tickets" name="flight-tickets" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="hotel-bookings">Hotel bookings:</label>
+    <input type="number" id="hotel-bookings" name="hotel-bookings" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="travel-insurance">Travel insurance:</label>
+    <input type="number" id="travel-insurance" name="travel-insurance" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="visa-passport-renewal">Visa/passport renewal:</label>
+    <input type="number" id="visa-passport-renewal" name="visa-passport-renewal" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="luggage-travel-accessories">Luggage or travel accessories:</label>
+    <input type="number" id="luggage-travel-accessories" name="luggage-travel-accessories" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>📚 Education & Self-Development</h3>
+  <div class="subcategory">
+    <label for="online-course-fees">Online course fees:</label>
+    <input type="number" id="online-course-fees" name="online-course-fees" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="workshops-events">Workshops / events:</label>
+    <input type="number" id="workshops-events" name="workshops-events" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="skill-development">Skill development (coding, business):</label>
+    <input type="number" id="skill-development" name="skill-development" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="book-subscriptions">Book subscriptions / bulk buys:</label>
+    <input type="number" id="book-subscriptions" name="book-subscriptions" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>👨‍👩‍👧‍👦 Parents / Family</h3>
+  <div class="subcategory">
+    <label for="annual-health-checkups">Annual health checkups:</label>
+    <input type="number" id="annual-health-checkups" name="annual-health-checkups" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="festive-purchases">Festive purchases:</label>
+    <input type="number" id="festive-purchases" name="festive-purchases" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="medical-support-items">Medical device or support items:</label>
+    <input type="number" id="medical-support-items" name="medical-support-items" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="year-end-trip-family">Year-end trip with family:</label>
+    <input type="number" id="year-end-trip-family" name="year-end-trip-family" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>💰 Savings & Investments</h3>
+  <div class="subcategory">
+    <label for="lump-sum-asb">Lump sum ASB / Tabung Haji:</label>
+    <input type="number" id="lump-sum-asb" name="lump-sum-asb" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="gold-stock-investments">Gold / stock investments:</label>
+    <input type="number" id="gold-stock-investments" name="gold-stock-investments" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="lump-sum-insurance">Lump sum insurance premium:</label>
+    <input type="number" id="lump-sum-insurance" name="lump-sum-insurance" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="prs-retirement-fund">PRS or retirement fund top-up:</label>
+    <input type="number" id="prs-retirement-fund" name="prs-retirement-fund" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>🐾 Pet Expenses</h3>
+  <div class="subcategory">
+    <label for="annual-vet-checkup">Annual vet checkup:</label>
+    <input type="number" id="annual-vet-checkup" name="annual-vet-checkup" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="annual-vaccinations">Annual vaccinations:</label>
+    <input type="number" id="annual-vaccinations" name="annual-vaccinations" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="deworming">Deworming (quarterly):</label>
+    <input type="number" id="deworming" name="deworming" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="grooming-package">Grooming package (quarterly or annual):</label>
+    <input type="number" id="grooming-package" name="grooming-package" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="license-renewal">License renewal:</label>
+    <input type="number" id="license-renewal" name="license-renewal" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="boarding">Boarding or pet-sitting fees:</label>
+    <input type="number" id="boarding" name="boarding" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>🤲 Charity & Zakat</h3>
+  <div class="subcategory">
+    <label for="regular-charity">Regular charity donations:</label>
+    <input type="number" id="regular-charity" name="regular-charity" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+  <label for="zakat-fitrah">Zakat Fitrah (Ramadan):</label>
+  <input type="number" id="zakat-fitrah" name="zakat-fitrah" oninput="calculateAnnual()" />
+</div>
+<div class="subcategory">
+  <label for="zakat-harta">Zakat Harta:</label>
+  <input type="number" id="zakat-harta" name="zakat-harta" oninput="calculateAnnual()" />
+</div>
+<div class="subcategory">
+  <label for="korban-qurban">Korban/Qurban (Eid Adha):</label>
+  <input type="number" id="korban-qurban" name="korban-qurban" oninput="calculateAnnual()" />
+</div>
+<div class="subcategory">
+  <label for="wakaf-donation">Wakaf donation:</label>
+  <input type="number" id="wakaf-donation" name="wakaf-donation" oninput="calculateAnnual()" />
+</div>
+  <div class="subcategory">
+    <label for="special-events-charity">Charity for special events:</label>
+    <input type="number" id="special-events-charity" name="special-events-charity" oninput="calculateAnnual()" />
+  </div>
+</div>
+        
+        <div class="category-container">
+  <h3>🤱 Baby Planning</h3>
+  <div class="subcategory">
+    <label for="prenatal-scan">Detailed prenatal scan (3D/4D scan):</label>
+    <input type="number" id="prenatal-scan" name="prenatal-scan" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="antenatal-classes">Antenatal classes package:</label>
+    <input type="number" id="antenatal-classes" name="antenatal-classes" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="birth-kit">Birth preparation kit:</label>
+    <input type="number" id="birth-kit" name="birth-kit" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="maternity-wardrobe">Maternity wardrobe (loungewear, support bras):</label>
+    <input type="number" id="maternity-wardrobe" name="maternity-wardrobe" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="big-baby-gear">Big baby gear (crib, stroller, car seat):</label>
+    <input type="number" id="big-baby-gear" name="big-baby-gear" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="confinement-set">Confinement set (herbs, binder):</label>
+    <input type="number" id="confinement-set" name="confinement-set" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="postpartum-care">Postpartum care items (nursing pillow, breast pump):</label>
+    <input type="number" id="postpartum-care" name="postpartum-care" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="confinement-booking">Confinement center or helper booking (if planned):</label>
+    <input type="number" id="confinement-booking" name="confinement-booking" oninput="calculateAnnual()" />
+  </div>
+</div>
+
+<div class="category-container">
+  <h3>🏫 Child Schooling</h3>
+  <div class="subcategory">
+    <label for="annual-school-fees">Annual school fees / registration:</label>
+    <input type="number" id="annual-school-fees" name="annual-school-fees" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="school-books">Textbooks & workbooks:</label>
+    <input type="number" id="school-books" name="school-books" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="school-uniforms">School uniforms & shoes:</label>
+    <input type="number" id="school-uniforms" name="school-uniforms" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="stationery">New stationery sets:</label>
+    <input type="number" id="stationery" name="stationery" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="tuition-fees">Tuition package registration:</label>
+    <input type="number" id="tuition-fees" name="tuition-fees" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="educational-tools">Educational apps / tools (learning tablets):</label>
+    <input type="number" id="educational-tools" name="educational-tools" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="school-trips">Field trip & camp payments:</label>
+    <input type="number" id="school-trips" name="school-trips" oninput="calculateAnnual()" />
+  </div>
+  <div class="subcategory">
+    <label for="teacher-gifts">Year-end gifts for teachers:</label>
+    <input type="number" id="teacher-gifts" name="teacher-gifts" oninput="calculateAnnual()" />
+  </div>
+  </div>
+        </div>
+        
+
+        <!-- Output and Buttons Container -->
+        <div class="output-container">
+          <p>Total Expenses: <span id="annual-total-expenses">0</span></p>
+          <p>Remaining Balance: <span id="annual-remaining-balance">0</span></p>
+          <button type="button" onclick="clearAll()">Clear All</button>
+          <button type="button" onclick="printReport()">Print</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
