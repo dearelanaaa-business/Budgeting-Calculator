@@ -63,8 +63,8 @@ function printReport() {
 
   let html = `<html><head><title>Budget Report</title><style>
     body { font-family: 'Courier New', Courier, monospace; padding: 20px; margin: 0; display: flex; flex-direction: column; }
-    h2 { margin-top: 30px; font-size: 20px; text-align: center; }
-    h3 { margin-top: 20px; font-size: 18px; }
+    h2 { margin-top: 20px; font-size: 20px; text-align: center; }
+    h3 { margin-top: 10px; font-size: 18px; }
     p { margin: 3px 0; font-size: 14px; }
     .total-section { margin-top: 20px; font-weight: bold; font-size: 16px; text-align: center; }
     .category-container { page-break-inside: avoid; margin-bottom: 20px; }
@@ -121,7 +121,7 @@ function printReport() {
     subInputs.forEach(input => {
       const label = container.querySelector(`label[for='${input.id}']`);
       const value = parseFloat(input.value) || 0;
-      html += `<p>${label?.textContent || input.name}: RM ${value.toFixed(2)}</p>`;
+      html += `<p>${label?.textContent || input.name} <p>RM ${value.toFixed(2)}</p>`;
     });
 
     html += `</div>`;
