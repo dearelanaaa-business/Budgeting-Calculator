@@ -163,7 +163,7 @@ button:active {
 /* Wrap the entire container that holds all categories in a grid */
 .category-wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-columns: repeat(3, 1fr); /* 2 columns */
   gap: 20px; /* space between the categories */
   margin: 0 auto;
   width: 100%; /* Ensure it takes full width */
