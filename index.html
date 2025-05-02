@@ -1474,74 +1474,468 @@
               />
             </div>
           </div>
-
-          <div class="category-container" id="annual-car-container">
-            <h3>🚗 Transportation</h3>
+          
+          <div class="category-container" id="annual-charity-container">
+            <h3>🤲 Charity & Zakat</h3>
             <div class="subcategory">
-              <label for="car-road-tax">Car road tax:</label>
+              <label for="regular-charity">Regular charity donations:</label>
               <input
                 type="number"
-                id="car-road-tax"
-                name="car-road-tax"
+                id="regular-charity"
+                name="regular-charity"
                 oninput="calculateAnnual()"
               />
             </div>
             <div class="subcategory">
-              <label for="car-insurance">Car insurance:</label>
+              <label for="zakat-fitrah">Zakat Fitrah (Ramadan):</label>
               <input
                 type="number"
-                id="car-insurance"
-                name="car-insurance"
+                id="zakat-fitrah"
+                name="zakat-fitrah"
                 oninput="calculateAnnual()"
               />
             </div>
             <div class="subcategory">
-              <label for="major-servicing"
-                >Major servicing (brakes, battery):</label
+              <label for="zakat-harta">Zakat Harta:</label>
+              <input
+                type="number"
+                id="zakat-harta"
+                name="zakat-harta"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="korban-qurban">Korban/Qurban (Eid Adha):</label>
+              <input
+                type="number"
+                id="korban-qurban"
+                name="korban-qurban"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="wakaf-donation">Wakaf donation:</label>
+              <input
+                type="number"
+                id="wakaf-donation"
+                name="wakaf-donation"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="special-events-charity"
+                >Charity for special events:</label
               >
               <input
                 type="number"
-                id="major-servicing"
-                name="major-servicing"
+                id="special-events-charity"
+                name="special-events-charity"
+                oninput="calculateAnnual()"
+              />
+            </div>
+          </div>
+          <div class="category-container" id="annual-pet-container">
+            <h3>🐾 Pet Expenses</h3>
+            <div class="subcategory">
+              <label for="annual-vet-checkup">Annual vet checkup:</label>
+              <input
+                type="number"
+                id="annual-vet-checkup"
+                name="annual-vet-checkup"
                 oninput="calculateAnnual()"
               />
             </div>
             <div class="subcategory">
-              <label for="puspakom-inspection"
-                >Puspakom inspection (if applicable):</label
+              <label for="annual-vaccinations">Annual vaccinations:</label>
+              <input
+                type="number"
+                id="annual-vaccinations"
+                name="annual-vaccinations"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="deworming">Deworming (quarterly):</label>
+              <input
+                type="number"
+                id="deworming"
+                name="deworming"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="grooming-package"
+                >Grooming package (quarterly or annual):</label
               >
               <input
                 type="number"
-                id="puspakom-inspection"
-                name="puspakom-inspection"
+                id="grooming-package"
+                name="grooming-package"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="license-renewal">License renewal:</label>
+              <input
+                type="number"
+                id="license-renewal"
+                name="license-renewal"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="boarding">Boarding or pet-sitting fees:</label>
+              <input
+                type="number"
+                id="boarding"
+                name="boarding"
                 oninput="calculateAnnual()"
               />
             </div>
           </div>
 
-          <div class="category-container" id="annual-insurance-container">
-            <h3>🛡️ Insurance & Protection</h3>
+           <div class="category-container" id="annual-baby-container">
+            <h3>🤱 Baby Planning</h3>
             <div class="subcategory">
-              <label for="annual-premium-plans">Annual premium plans:</label>
+              <label for="prenatal-scan"
+                >Detailed prenatal scan:</label
+              >
               <input
                 type="number"
-                id="annual-premium-plans"
-                name="annual-premium-plans"
+                id="prenatal-scan"
+                name="prenatal-scan"
                 oninput="calculateAnnual()"
               />
             </div>
             <div class="subcategory">
-              <label for="insurance-review">Insurance review or upgrade:</label>
+              <label for="antenatal-classes">Antenatal classes package:</label>
               <input
                 type="number"
-                id="insurance-review"
-                name="insurance-review"
+                id="antenatal-classes"
+                name="antenatal-classes"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="birth-kit">Birth preparation kit:</label>
+              <input
+                type="number"
+                id="birth-kit"
+                name="birth-kit"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="maternity-wardrobe"
+                >Maternity wardrobe:</label
+              >
+              <input
+                type="number"
+                id="maternity-wardrobe"
+                name="maternity-wardrobe"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="big-baby-gear"
+                >Big baby gear:</label
+              >
+              <input
+                type="number"
+                id="big-baby-gear"
+                name="big-baby-gear"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="confinement-set"
+                >Confinement set:</label
+              >
+              <input
+                type="number"
+                id="confinement-set"
+                name="confinement-set"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="postpartum-care"
+                >Postpartum care items :</label
+              >
+              <input
+                type="number"
+                id="postpartum-care"
+                name="postpartum-care"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="confinement-booking"
+                >Confinement center or helper booking:</label
+              >
+              <input
+                type="number"
+                id="confinement-booking"
+                name="confinement-booking"
                 oninput="calculateAnnual()"
               />
             </div>
           </div>
 
-          <!-- Annual Health & Wellness -->
+          <div class="category-container" id="annual-schooling-container">
+            <h3>🏫 Child Schooling</h3>
+            <div class="subcategory">
+              <label for="annual-school-fees"
+                >Annual school fees:</label
+              >
+              <input
+                type="number"
+                id="annual-school-fees"
+                name="annual-school-fees"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="school-books">Textbooks & workbooks:</label>
+              <input
+                type="number"
+                id="school-books"
+                name="school-books"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="school-uniforms">School uniforms & shoes:</label>
+              <input
+                type="number"
+                id="school-uniforms"
+                name="school-uniforms"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="stationery">New stationery sets:</label>
+              <input
+                type="number"
+                id="stationery"
+                name="stationery"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="tuition-fees">Tuition package:</label>
+              <input
+                type="number"
+                id="tuition-fees"
+                name="tuition-fees"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="educational-tools"
+                >Educational apps / tools:</label
+              >
+              <input
+                type="number"
+                id="educational-tools"
+                name="educational-tools"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="school-trips">Field trip & camp payments:</label>
+              <input
+                type="number"
+                id="school-trips"
+                name="school-trips"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="teacher-gifts">Year-end gifts for teachers:</label>
+              <input
+                type="number"
+                id="teacher-gifts"
+                name="teacher-gifts"
+                oninput="calculateAnnual()"
+              />
+            </div>
+          </div>
+          <!-- Annual Clothing & Accessories -->
+          <div
+            class="category-container"
+            id="annual-clothing-accessories-container"
+          >
+            <h3>👗 Clothing & Accessories (Annual)</h3>
+
+            <div class="subcategory">
+              <label for="annual-clothing"
+                >Clothing for special occasions, seasonal items:</label
+              >
+              <input
+                type="number"
+                id="annual-clothing"
+                name="annual-clothing"
+                oninput="calculateAnnual()"
+              />
+            </div>
+
+            <div class="subcategory">
+              <label for="annual-footwear"
+                >Footwear:</label
+              >
+              <input
+                type="number"
+                id="annual-footwear"
+                name="annual-footwear"
+                oninput="calculateAnnual()"
+              />
+            </div>
+
+            <div class="subcategory">
+              <label for="annual-accessories"
+                >Accessories:</label
+              >
+              <input
+                type="number"
+                id="annual-accessories"
+                name="annual-accessories"
+                oninput="calculateAnnual()"
+              />
+            </div>
+
+            <div class="subcategory">
+              <label for="baju-raya">Baju Raya / Festive outfits:</label>
+              <input
+                type="number"
+                id="baju-raya"
+                name="baju-raya"
+                oninput="calculateAnnual()"
+              />
+            </div>
+
+            <div class="subcategory">
+              <label for="wedding-formalwear">Wedding / Formalwear:</label>
+              <input
+                type="number"
+                id="wedding-formalwear"
+                name="wedding-formalwear"
+                oninput="calculateAnnual()"
+              />
+            </div>
+
+            <div class="subcategory">
+              <label for="shoes-handbag-watch">Shoes / Handbag / Watch:</label>
+              <input
+                type="number"
+                id="shoes-handbag-watch"
+                name="shoes-handbag-watch"
+                oninput="calculateAnnual()"
+              />
+            </div>
+
+            <div class="subcategory">
+              <label for="winter-wear">Winter wear:</label>
+              <input
+                type="number"
+                id="winter-wear"
+                name="winter-wear"
+                oninput="calculateAnnual()"
+              />
+            </div>
+          </div>
+          
+          <!-- Travel -->
+          <div class="category-container" id="annual-travel-container">
+            <h3>✈️ Travel (Annual)</h3>
+            <div class="subcategory">
+              <label for="travel-flights">Flight Tickets:</label>
+              <input
+                type="number"
+                id="travel-flights"
+                name="travel-flights"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="travel-accommodation">Accommodation:</label>
+              <input
+                type="number"
+                id="travel-accommodation"
+                name="travel-accommodation"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="travel-transport"
+                >Transport (car rental / local travel):</label
+              >
+              <input
+                type="number"
+                id="travel-transport"
+                name="travel-transport"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="travel-tours">Activities / Tickets / Tours:</label>
+              <input
+                type="number"
+                id="travel-tours"
+                name="travel-tours"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="travel-insurance">Travel Insurance:</label>
+              <input
+                type="number"
+                id="travel-insurance"
+                name="travel-insurance"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="travel-shopping">Travel Shopping / Souvenirs:</label>
+              <input
+                type="number"
+                id="travel-shopping"
+                name="travel-shopping"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="luggage-accessories"
+                >Luggage or Travel Accessories:</label
+              >
+              <input
+                type="number"
+                id="luggage-accessories"
+                name="luggage-accessories"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="travel-sim">Travel SIM / Roaming Charges:</label>
+              <input
+                type="number"
+                id="travel-sim"
+                name="travel-sim"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="travel-misc">Miscellaneous Travel Expenses:</label>
+              <input
+                type="number"
+                id="travel-misc"
+                name="travel-misc"
+                oninput="calculateAnnual()"
+              />
+            </div>
+          </div>
+          
+           <!-- Annual Health & Wellness -->
           <div class="category-container" id="annual-health-wellness-container">
             <h3>🏥 Health & Wellness (Annual)</h3>
 
@@ -1663,8 +2057,113 @@
               />
             </div>
           </div>
+          
+          <div class="category-container" id="annual-insurance-container">
+            <h3>🛡️ Insurance & Protection</h3>
+            <div class="subcategory">
+              <label for="annual-premium-plans">Annual premium plans:</label>
+              <input
+                type="number"
+                id="annual-premium-plans"
+                name="annual-premium-plans"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="insurance-review">Insurance review or upgrade:</label>
+              <input
+                type="number"
+                id="insurance-review"
+                name="insurance-review"
+                oninput="calculateAnnual()"
+              />
+            </div>
+          </div>
 
-          <div class="category-container" id="annual-personalcare-container">
+
+          <div class="category-container" id="annual-car-container">
+            <h3>🚗 Transportation</h3>
+            <div class="subcategory">
+              <label for="car-road-tax">Car road tax:</label>
+              <input
+                type="number"
+                id="car-road-tax"
+                name="car-road-tax"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="car-insurance">Car insurance:</label>
+              <input
+                type="number"
+                id="car-insurance"
+                name="car-insurance"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="major-servicing"
+                >Major servicing (brakes, battery):</label
+              >
+              <input
+                type="number"
+                id="major-servicing"
+                name="major-servicing"
+                oninput="calculateAnnual()"
+              />
+            </div>
+            <div class="subcategory">
+              <label for="puspakom-inspection"
+                >Puspakom inspection (if applicable):</label
+              >
+              <input
+                type="number"
+                id="puspakom-inspection"
+                name="puspakom-inspection"
+                oninput="calculateAnnual()"
+              />
+            </div>
+          </div>
+          
+         
+          <!-- Social & Gifting (Annual) -->
+          <div class="category-container" id="annual-social-gifting-container">
+            <h3>🎉 Social & Gifting (Annual)</h3>
+
+            <div class="subcategory">
+              <label for="duit-raya-hampers-annual">Duit Raya / Hampers:</label>
+              <input
+                type="number"
+                id="duit-raya-hampers-annual"
+                name="duit-raya-hampers-annual"
+                oninput="calculateAnnual()"
+              />
+            </div>
+
+            <div class="subcategory">
+              <label for="year-end-celebrations-annual"
+                >Year-end celebrations:</label
+              >
+              <input
+                type="number"
+                id="year-end-celebrations-annual"
+                name="year-end-celebrations-annual"
+                oninput="calculateAnnual()"
+              />
+            </div>
+
+            <div class="subcategory">
+              <label for="holiday-gifting-annual">Holiday gifting:</label>
+              <input
+                type="number"
+                id="holiday-gifting-annual"
+                name="holiday-gifting-annual"
+                oninput="calculateAnnual()"
+              />
+            </div>
+          </div>
+          
+ <div class="category-container" id="annual-personalcare-container">
             <h3>💇‍♀️ Personal Care & Beauty</h3>
             <div class="subcategory">
               <label for="hair-coloring"
@@ -1708,216 +2207,9 @@
             </div>
           </div>
 
-          <!-- Annual Clothing & Accessories -->
-          <div
-            class="category-container"
-            id="annual-clothing-accessories-container"
-          >
-            <h3>👗 Clothing & Accessories (Annual)</h3>
+          
 
-            <div class="subcategory">
-              <label for="annual-clothing"
-                >Clothing (for special occasions, seasonal items):</label
-              >
-              <input
-                type="number"
-                id="annual-clothing"
-                name="annual-clothing"
-                oninput="calculateAnnual()"
-              />
-            </div>
-
-            <div class="subcategory">
-              <label for="annual-footwear"
-                >Footwear (special occasions, seasonal items):</label
-              >
-              <input
-                type="number"
-                id="annual-footwear"
-                name="annual-footwear"
-                oninput="calculateAnnual()"
-              />
-            </div>
-
-            <div class="subcategory">
-              <label for="annual-accessories"
-                >Accessories (special occasion or luxury items):</label
-              >
-              <input
-                type="number"
-                id="annual-accessories"
-                name="annual-accessories"
-                oninput="calculateAnnual()"
-              />
-            </div>
-
-            <div class="subcategory">
-              <label for="baju-raya">Baju Raya / Festive outfits:</label>
-              <input
-                type="number"
-                id="baju-raya"
-                name="baju-raya"
-                oninput="calculateAnnual()"
-              />
-            </div>
-
-            <div class="subcategory">
-              <label for="wedding-formalwear">Wedding / Formalwear:</label>
-              <input
-                type="number"
-                id="wedding-formalwear"
-                name="wedding-formalwear"
-                oninput="calculateAnnual()"
-              />
-            </div>
-
-            <div class="subcategory">
-              <label for="shoes-handbag-watch">Shoes / Handbag / Watch:</label>
-              <input
-                type="number"
-                id="shoes-handbag-watch"
-                name="shoes-handbag-watch"
-                oninput="calculateAnnual()"
-              />
-            </div>
-
-            <div class="subcategory">
-              <label for="winter-wear">Winter wear (if traveling):</label>
-              <input
-                type="number"
-                id="winter-wear"
-                name="winter-wear"
-                oninput="calculateAnnual()"
-              />
-            </div>
-          </div>
-
-          <!-- Social & Gifting (Annual) -->
-          <div class="category-container" id="annual-social-gifting-container">
-            <h3>🎉 Social & Gifting (Annual)</h3>
-
-            <div class="subcategory">
-              <label for="duit-raya-hampers-annual">Duit Raya / Hampers:</label>
-              <input
-                type="number"
-                id="duit-raya-hampers-annual"
-                name="duit-raya-hampers-annual"
-                oninput="calculateAnnual()"
-              />
-            </div>
-
-            <div class="subcategory">
-              <label for="year-end-celebrations-annual"
-                >Year-end celebrations:</label
-              >
-              <input
-                type="number"
-                id="year-end-celebrations-annual"
-                name="year-end-celebrations-annual"
-                oninput="calculateAnnual()"
-              />
-            </div>
-
-            <div class="subcategory">
-              <label for="holiday-gifting-annual">Holiday gifting:</label>
-              <input
-                type="number"
-                id="holiday-gifting-annual"
-                name="holiday-gifting-annual"
-                oninput="calculateAnnual()"
-              />
-            </div>
-          </div>
-
-          <!-- Travel -->
-          <div class="category-container" id="annual-travel-container">
-            <h3>✈️ Travel (Annual)</h3>
-            <div class="subcategory">
-              <label for="travel-flights">Flight Tickets:</label>
-              <input
-                type="number"
-                id="travel-flights"
-                name="travel-flights"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="travel-accommodation">Accommodation:</label>
-              <input
-                type="number"
-                id="travel-accommodation"
-                name="travel-accommodation"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="travel-transport"
-                >Transport (car rental / local travel):</label
-              >
-              <input
-                type="number"
-                id="travel-transport"
-                name="travel-transport"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="travel-tours">Activities / Tickets / Tours:</label>
-              <input
-                type="number"
-                id="travel-tours"
-                name="travel-tours"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="travel-insurance">Travel Insurance:</label>
-              <input
-                type="number"
-                id="travel-insurance"
-                name="travel-insurance"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="travel-shopping">Travel Shopping / Souvenirs:</label>
-              <input
-                type="number"
-                id="travel-shopping"
-                name="travel-shopping"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="luggage-accessories"
-                >Luggage or Travel Accessories:</label
-              >
-              <input
-                type="number"
-                id="luggage-accessories"
-                name="luggage-accessories"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="travel-sim">Travel SIM / Roaming Charges:</label>
-              <input
-                type="number"
-                id="travel-sim"
-                name="travel-sim"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="travel-misc">Miscellaneous Travel Expenses:</label>
-              <input
-                type="number"
-                id="travel-misc"
-                name="travel-misc"
-                oninput="calculateAnnual()"
-              />
-            </div>
-          </div>
+          
 
           <div class="category-container" id="annual-education-container">
             <h3>📚 Education & Self-Development</h3>
@@ -2017,7 +2309,7 @@
             <h3>💰 Annual Savings & Investments</h3>
             <div class="subcategory">
               <label for="annual-retirement-contributions"
-                >Annual Retirement Contributions:</label
+                >Annual Retirement:</label
               >
               <input
                 type="number"
@@ -2027,7 +2319,7 @@
               />
             </div>
             <div class="subcategory">
-              <label for="annual-tax-savings">Tax Savings Contributions:</label>
+              <label for="annual-tax-savings">Tax Savings :</label>
               <input
                 type="number"
                 id="annual-tax-savings"
@@ -2057,7 +2349,7 @@
             </div>
             <div class="subcategory">
               <label for="annual-contributions-investment-funds"
-                >Annual Contributions to Investment Funds:</label
+                >Investment Funds:</label
               >
               <input
                 type="number"
@@ -2068,293 +2360,7 @@
             </div>
           </div>
 
-          <div class="category-container" id="annual-pet-container">
-            <h3>🐾 Pet Expenses</h3>
-            <div class="subcategory">
-              <label for="annual-vet-checkup">Annual vet checkup:</label>
-              <input
-                type="number"
-                id="annual-vet-checkup"
-                name="annual-vet-checkup"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="annual-vaccinations">Annual vaccinations:</label>
-              <input
-                type="number"
-                id="annual-vaccinations"
-                name="annual-vaccinations"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="deworming">Deworming (quarterly):</label>
-              <input
-                type="number"
-                id="deworming"
-                name="deworming"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="grooming-package"
-                >Grooming package (quarterly or annual):</label
-              >
-              <input
-                type="number"
-                id="grooming-package"
-                name="grooming-package"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="license-renewal">License renewal:</label>
-              <input
-                type="number"
-                id="license-renewal"
-                name="license-renewal"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="boarding">Boarding or pet-sitting fees:</label>
-              <input
-                type="number"
-                id="boarding"
-                name="boarding"
-                oninput="calculateAnnual()"
-              />
-            </div>
-          </div>
-
-          <div class="category-container" id="annual-charity-container">
-            <h3>🤲 Charity & Zakat</h3>
-            <div class="subcategory">
-              <label for="regular-charity">Regular charity donations:</label>
-              <input
-                type="number"
-                id="regular-charity"
-                name="regular-charity"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="zakat-fitrah">Zakat Fitrah (Ramadan):</label>
-              <input
-                type="number"
-                id="zakat-fitrah"
-                name="zakat-fitrah"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="zakat-harta">Zakat Harta:</label>
-              <input
-                type="number"
-                id="zakat-harta"
-                name="zakat-harta"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="korban-qurban">Korban/Qurban (Eid Adha):</label>
-              <input
-                type="number"
-                id="korban-qurban"
-                name="korban-qurban"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="wakaf-donation">Wakaf donation:</label>
-              <input
-                type="number"
-                id="wakaf-donation"
-                name="wakaf-donation"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="special-events-charity"
-                >Charity for special events:</label
-              >
-              <input
-                type="number"
-                id="special-events-charity"
-                name="special-events-charity"
-                oninput="calculateAnnual()"
-              />
-            </div>
-          </div>
-
-          <div class="category-container" id="annual-baby-container">
-            <h3>🤱 Baby Planning</h3>
-            <div class="subcategory">
-              <label for="prenatal-scan"
-                >Detailed prenatal scan (3D/4D scan):</label
-              >
-              <input
-                type="number"
-                id="prenatal-scan"
-                name="prenatal-scan"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="antenatal-classes">Antenatal classes package:</label>
-              <input
-                type="number"
-                id="antenatal-classes"
-                name="antenatal-classes"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="birth-kit">Birth preparation kit:</label>
-              <input
-                type="number"
-                id="birth-kit"
-                name="birth-kit"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="maternity-wardrobe"
-                >Maternity wardrobe (loungewear, support bras):</label
-              >
-              <input
-                type="number"
-                id="maternity-wardrobe"
-                name="maternity-wardrobe"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="big-baby-gear"
-                >Big baby gear (crib, stroller, car seat):</label
-              >
-              <input
-                type="number"
-                id="big-baby-gear"
-                name="big-baby-gear"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="confinement-set"
-                >Confinement set (herbs, binder):</label
-              >
-              <input
-                type="number"
-                id="confinement-set"
-                name="confinement-set"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="postpartum-care"
-                >Postpartum care items (nursing pillow, breast pump):</label
-              >
-              <input
-                type="number"
-                id="postpartum-care"
-                name="postpartum-care"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="confinement-booking"
-                >Confinement center or helper booking (if planned):</label
-              >
-              <input
-                type="number"
-                id="confinement-booking"
-                name="confinement-booking"
-                oninput="calculateAnnual()"
-              />
-            </div>
-          </div>
-
-          <div class="category-container" id="annual-schooling-container">
-            <h3>🏫 Child Schooling</h3>
-            <div class="subcategory">
-              <label for="annual-school-fees"
-                >Annual school fees / registration:</label
-              >
-              <input
-                type="number"
-                id="annual-school-fees"
-                name="annual-school-fees"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="school-books">Textbooks & workbooks:</label>
-              <input
-                type="number"
-                id="school-books"
-                name="school-books"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="school-uniforms">School uniforms & shoes:</label>
-              <input
-                type="number"
-                id="school-uniforms"
-                name="school-uniforms"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="stationery">New stationery sets:</label>
-              <input
-                type="number"
-                id="stationery"
-                name="stationery"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="tuition-fees">Tuition package registration:</label>
-              <input
-                type="number"
-                id="tuition-fees"
-                name="tuition-fees"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="educational-tools"
-                >Educational apps / tools (learning tablets):</label
-              >
-              <input
-                type="number"
-                id="educational-tools"
-                name="educational-tools"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="school-trips">Field trip & camp payments:</label>
-              <input
-                type="number"
-                id="school-trips"
-                name="school-trips"
-                oninput="calculateAnnual()"
-              />
-            </div>
-            <div class="subcategory">
-              <label for="teacher-gifts">Year-end gifts for teachers:</label>
-              <input
-                type="number"
-                id="teacher-gifts"
-                name="teacher-gifts"
-                oninput="calculateAnnual()"
-              />
-            </div>
-          </div>
+         
         </div>
 
         <!-- Output and Buttons Container -->
