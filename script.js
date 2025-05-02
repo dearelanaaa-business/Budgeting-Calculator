@@ -12,7 +12,7 @@ function openTab(evt, tabName) {
 
 // Auto-calculate monthly totals
 function calculateMonthly() {
-  const salary = parseFloat(document.getElementById("monthly-salary").value) || 0; // Updated to "monthly-salary"
+  const salary = parseFloat(document.getElementById("monthly-salary").value) || 0;
   const inputs = document.querySelectorAll("#Monthly .subcategory input");
 
   let total = 0;
@@ -23,7 +23,6 @@ function calculateMonthly() {
   document.getElementById("monthly-total-expenses").textContent = total.toFixed(2);
   document.getElementById("monthly-remaining-balance").textContent = (salary - total).toFixed(2);
 }
-
 
 // Auto-calculate annual totals
 function calculateAnnual() {
@@ -50,11 +49,17 @@ function clearAll() {
   document.getElementById("annual-remaining-balance").textContent = "0";
 }
 
-// Print page with coding font, all labels, and total expenses in two columns
+// Print page with coding font, all labels, total expenses, and salary based on active tab
 function printReport() {
   const activeTab = document.querySelector(".tabcontent.active");
   const printWindow = window.open("", "_blank");
   const isMonthly = activeTab.id === "Monthly";
+
+  // Get monthly and annual salary values for printout
+  const monthlySalary = isMonthly
+    ? document.getElementById("monthly-salary").value || 0
+    : 0;
+  const annualSalary = document.getElementById("annual-salary").value || 0;
 
   let html = `<html><head><title>Budget Report</title><style>
     body { font-family: 'Courier New', Courier, monospace; padding: 20px; margin: 0; display: flex; flex-direction: column; }
@@ -78,12 +83,26 @@ function printReport() {
       background-color: #f9f9f9; 
     }
 
+    .salary-section { 
+      text-align: center; 
+      margin-bottom: 30px; 
+    }
+
+    .salary-section p { 
+      font-size: 18px; 
+      font-weight: bold; 
+    }
+
     @page { size: A4; margin: 10mm; }
   </style></head><body>`;
 
   html += `<h2>${isMonthly ? "Monthly" : "Annual"} Expenses Report</h2>`;
 
-  // Two columns container
+  // Display salary info
+  html += `<div class="salary-section">
+            <p>${isMonthly ? "Monthly" : "Annual"} Salary: RM ${(isMonthly ? parseFloat(monthlySalary) : parseFloat(annualSalary)).toFixed(2)}</p>
+          </div>`;
+
   html += `<div class="columns">`;
 
   const categoryContainers = activeTab.querySelectorAll(".category-container");
@@ -93,9 +112,8 @@ function printReport() {
     const subInputs = container.querySelectorAll("input");
     const categoryTitle = container.querySelector("h3")?.textContent || "Category";
 
-    // Start new column every 6 categories for better balance
     if (count % 6 === 0 && count !== 0) {
-      html += `</div><div class="columns">`;  // Close and start new column container
+      html += `</div><div class="columns">`;
     }
 
     html += `<div class="column"><h3>${categoryTitle}</h3>`;
@@ -105,14 +123,13 @@ function printReport() {
       const value = parseFloat(input.value) || 0;
       html += `<p>${label?.textContent || input.name}: RM ${value.toFixed(2)}</p>`;
     });
-    html += `</div>`; // End column
 
+    html += `</div>`;
     count++;
   });
 
-  html += `</div>`; // End columns container
+  html += `</div>`;
 
-  // Add total expenses and remaining balance at the bottom
   const totalExpenses = isMonthly 
     ? document.getElementById("monthly-total-expenses").textContent 
     : document.getElementById("annual-total-expenses").textContent;
