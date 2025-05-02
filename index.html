@@ -27,50 +27,66 @@
         <!-- Monthly Salary -->
         <div class="monthly-salary-container center-salary">
   <label for="monthly-salary">💰 Monthly Salary:</label>
-  <input type="number" id="monthly-salary" />
+  <input type="number" id="monthly-salary" oninput="calculateMonthly()" />
 </div>
 
 
-        <!-- Housing -->
-        <div class="category-wrapper">
-        <div class="category-container">
-          <h3>🏠 Housing</h3>
-          <div class="subcategory">
-            <label for="rent-room"
-              >Rent / Room rental / Maintenance fees:</label
-            >
-            <input
-              type="number"
-              id="rent-room"
-              name="rent-room"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="minor-repairs">Minor home repairs:</label>
-            <input
-              type="number"
-              id="minor-repairs"
-              name="minor-repairs"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="home-insurance">Home insurance (monthly):</label>
-            <input
-              type="number"
-              id="home-insurance"
-              name="home-insurance"
-              oninput="calculateMonthly()"
-            />
-          </div>
-        </div>
+        <!-- Monthly Housing Expenses -->
+<div class="category-wrapper">
+  <div class="category-container" id="housing-container">
+    <h3>🏠 Housing</h3>
+    <div class="subcategory">
+      <label for="mortgage-loan">Mortgage Loan Payment:</label>
+      <input
+        type="number"
+        id="mortgage-loan"
+        name="mortgage-loan"
+        oninput="calculateMonthly()"
+      />
+    </div>
+    <div class="subcategory">
+      <label for="maintenance-repairs">Maintenance & Repairs:</label>
+      <input
+        type="number"
+        id="maintenance-repairs"
+        name="maintenance-repairs"
+        oninput="calculateMonthly()"
+      />
+    </div>
+    <div class="subcategory">
+      <label for="home-insurance-monthly">Home Insurance:</label>
+      <input
+        type="number"
+        id="home-insurance-monthly"
+        name="home-insurance-monthly"
+        oninput="calculateMonthly()"
+      />
+    </div>
+    <div class="subcategory">
+      <label for="security-services">Security Services:</label>
+      <input
+        type="number"
+        id="security-services"
+        name="security-services"
+        oninput="calculateMonthly()"
+      />
+    </div>
+    <div class="subcategory">
+      <label for="management-fees">Management Fees:</label>
+      <input
+        type="number"
+        id="management-fees"
+        name="management-fees"
+        oninput="calculateMonthly()"
+      />
+    </div>
+  </div>
 
         <!-- Utilities & Bills -->
-        <div class="category-container">
+        <div class="category-container" id="utilities-container">
           <h3>💡 Utilities & Bills</h3>
           <div class="subcategory">
-            <label for="electricity">Electricity:</label>
+            <label for="electricity">Electricity (TNB):</label>
             <input
               type="number"
               id="electricity"
@@ -79,7 +95,7 @@
             />
           </div>
           <div class="subcategory">
-            <label for="water">Water:</label>
+            <label for="water">Water (Ranhill SAJ Johor):</label>
             <input
               type="number"
               id="water"
@@ -88,7 +104,7 @@
             />
           </div>
           <div class="subcategory">
-            <label for="internet">Internet:</label>
+            <label for="internet">Internet / WiFi:</label>
             <input
               type="number"
               id="internet"
@@ -97,7 +113,7 @@
             />
           </div>
           <div class="subcategory">
-            <label for="mobile-plan">Mobile plan:</label>
+            <label for="phone-bill">Mobile Phone Bill / Top-up:</label>
             <input
               type="number"
               id="mobile-plan"
@@ -106,14 +122,23 @@
             />
           </div>
           <div class="subcategory">
-            <label for="streaming">Streaming services:</label>
-            <input
-              type="number"
-              id="streaming"
-              name="streaming"
-              oninput="calculateMonthly()"
-            />
+      <label for="indah-water">Indah Water (Sewerage):</label>
+      <input
+        type="number"
+        id="indah-water"
+        name="indah-water"
+        oninput="calculateMonthly()"
+          />
           </div>
+          <div class="subcategory">
+      <label for="gas">Gas (LPG tank or piped):</label>
+      <input
+        type="number"
+        id="gas"
+        name="gas"
+        oninput="calculateMonthly()"
+      />
+    </div>
           <div class="subcategory">
             <label for="astro-cable">Astro / Cable TV:</label>
             <input
@@ -123,260 +148,426 @@
               oninput="calculateMonthly()"
             />
           </div>
-          <div class="subcategory">
-            <label for="cloud-storage">Cloud storage:</label>
-            <input
-              type="number"
-              id="cloud-storage"
-              name="cloud-storage"
-              oninput="calculateMonthly()"
-            />
-          </div>
         </div>
 
         <!-- Food & Groceries -->
-        <div class="category-container">
-          <h3>🍽️ Food & Groceries</h3>
-          <div class="subcategory"> 
-            <label for="groceries">Groceries:</label>
-            <input
-              type="number"
-              id="groceries"
-              name="groceries"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="eating-out">Eating out:</label>
-            <input
-              type="number"
-              id="eating-out"
-              name="eating-out"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="food-delivery">Food delivery:</label>
-            <input
-              type="number"
-              id="food-delivery"
-              name="food-delivery"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="snacks">Snacks / bubble tea / coffee:</label>
-            <input
-              type="number"
-              id="snacks"
-              name="snacks"
-              oninput="calculateMonthly()"
-            />
-          </div>
-        </div>
+<div class="category-container" id="food-groceries-container">
+  <h3>🛒 Food & Groceries</h3>
+
+  <div class="subcategory">
+    <label for="groceries">Groceries:</label>
+    <input
+      type="number"
+      id="groceries"
+      name="groceries"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="eating-out">Eating Out:</label>
+    <input
+      type="number"
+      id="eating-out"
+      name="eating-out"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="food-delivery">Food Delivery:</label>
+    <input
+      type="number"
+      id="food-delivery"
+      name="food-delivery"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="snacks">Snacks / Bubble Tea / Coffee:</label>
+    <input
+      type="number"
+      id="snacks"
+      name="snacks"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="occasional-treats">Occasional Treats:</label>
+    <input
+      type="number"
+      id="occasional-treats"
+      name="occasional-treats"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="baby-food">Baby Food / Formula:</label>
+    <input
+      type="number"
+      id="baby-food"
+      name="baby-food"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="baking-ingredients">Baking Ingredients:</label>
+    <input
+      type="number"
+      id="baking-ingredients"
+      name="baking-ingredients"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="health-drinks">Health Drinks / Supplements:</label>
+    <input
+      type="number"
+      id="health-drinks"
+      name="health-drinks"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="condiments-sauces">Condiments / Sauces:</label>
+    <input
+      type="number"
+      id="condiments-sauces"
+      name="condiments-sauces"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="frozen-foods">Frozen Foods:</label>
+    <input
+      type="number"
+      id="frozen-foods"
+      name="frozen-foods"
+      oninput="calculateMonthly()"
+    />
+  </div>
+</div>
 
         <!-- Transportation -->
-        <div class="category-container">
-          <h3>🚗 Transportation</h3>
-          <div class="subcategory">
-            <label for="petrol">Petrol:</label>
-            <input
-              type="number"
-              id="petrol"
-              name="petrol"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="parking-fees">Parking fees:</label>
-            <input
-              type="number"
-              id="parking-fees"
-              name="parking-fees"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="toll-reload">Toll reloads (Touch 'n Go):</label>
-            <input
-              type="number"
-              id="toll-reload"
-              name="toll-reload"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="car-servicing">Basic car servicing:</label>
-            <input
-              type="number"
-              id="car-servicing"
-              name="car-servicing"
-              oninput="calculateMonthly()"
-            />
-          </div>
-        </div>
+<div class="category-container" id="transportation-container">
+  <h3>🚗 Transportation</h3>
 
-        <!-- Insurance & Protection -->
-        <div class="category-container">
-          <h3>🛡️ Insurance & Protection</h3>
-          <div class="subcategory">
-            <label for="medical-card">Medical card (monthly):</label>
-            <input
-              type="number"
-              id="medical-card"
-              name="medical-card"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="life-insurance">Life insurance (monthly):</label>
-            <input
-              type="number"
-              id="life-insurance"
-              name="life-insurance"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="pa-insurance">Personal accident (PA) insurance:</label>
-            <input
-              type="number"
-              id="pa-insurance"
-              name="pa-insurance"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="critical-illness"
-              >Critical illness rider (monthly):</label
-            >
-            <input
-              type="number"
-              id="critical-illness"
-              name="critical-illness"
-              oninput="calculateMonthly()"
-            />
-          </div>
-        </div>
+  <div class="subcategory">
+    <label for="car-loan">Car Loan Installment:</label>
+    <input
+      type="number"
+      id="car-loan"
+      name="car-loan"
+      oninput="calculateMonthly()"
+    />
+  </div>
 
-        <!-- Personal Care -->
-        <div class="category-container">
-          <h3> 💅 Personal Care & Beauty</h3>
-          <div class="subcategory">
-            <label for="skincare">Skincare:</label>
-            <input
-              type="number"
-              id="skincare"
-              name="skincare"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="makeup">Makeup:</label>
-            <input
-              type="number"
-              id="makeup"
-              name="makeup"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="feminine-hygiene">Feminine hygiene products:</label>
-            <input
-              type="number"
-              id="feminine-hygiene"
-              name="feminine-hygiene"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="haircare">Haircare:</label>
-            <input
-              type="number"
-              id="haircare"
-              name="haircare"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="supplements">Supplements / vitamins:</label>
-            <input
-              type="number"
-              id="supplements"
-              name="supplements"
-              oninput="calculateMonthly()"
-            />
-          </div>
-        </div>
+  <div class="subcategory">
+    <label for="fuel">Fuel / Petrol:</label>
+    <input
+      type="number"
+      id="fuel"
+      name="fuel"
+      oninput="calculateMonthly()"
+    />
+  </div>
 
-        <!-- Hair, Beauty & Wellness -->
-        <div class="category-container">
-          <h3>💇‍♀️ Hair, Beauty & Wellness</h3>
-          <div class="subcategory">
-            <label for="haircut">Haircut or trim:</label>
-            <input
-              type="number"
-              id="haircut"
-              name="haircut"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="monthly-facial">Monthly facial / nails / waxing:</label>
-            <input
-              type="number"
-              id="monthly-facial"
-              name="monthly-facial"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="massage-therapy">Massage / body therapy:</label>
-            <input
-              type="number"
-              id="massage-therapy"
-              name="massage-therapy"
-              oninput="calculateMonthly()"
-            />
-          </div>
-        </div>
+  <div class="subcategory">
+    <label for="toll-parking">Toll / Parking Fees:</label>
+    <input
+      type="number"
+      id="toll-parking"
+      name="toll-parking"
+      oninput="calculateMonthly()"
+    />
+  </div>
 
-        <!-- Health & Fitness -->
-        <div class="category-container">
-          <h3>🏥 Health & Wellness</h3>
-          <div class="subcategory">
-            <label for="gym-membership">Gym or yoga membership:</label>
-            <input
-              type="number"
-              id="gym-membership"
-              name="gym-membership"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="fitness-supplements">Supplements:</label>
-            <input
-              type="number"
-              id="fitness-supplements"
-              name="fitness-supplements"
-              oninput="calculateMonthly()"
-            />
-          </div>
-          <div class="subcategory">
-            <label for="therapy-counseling"
-              >Therapy / counselling sessions:</label
-            >
-            <input
-              type="number"
-              id="therapy-counseling"
-              name="therapy-counseling"
-              oninput="calculateMonthly()"
-            />
-          </div>
-        </div>
+  <div class="subcategory">
+    <label for="public-transport">Public Transport (Bus / MRT / LRT):</label>
+    <input
+      type="number"
+      id="public-transport"
+      name="public-transport"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="e-hailing">E-hailing / Taxi (Grab etc.):</label>
+    <input
+      type="number"
+      id="e-hailing"
+      name="e-hailing"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="car-maintenance-monthly">Maintenance Savings:</label>
+    <input
+      type="number"
+      id="car-maintenance-monthly"
+      name="car-maintenance-monthly"
+      oninput="calculateMonthly()"
+    />
+  </div>
+</div>
+<!-- Insurance & Protection -->
+<div class="category-container" id="insurance-container">
+  <h3>🛡️ Insurance & Protection</h3>
+
+  <div class="subcategory">
+    <label for="medical-insurance">Medical / Hospitalisation Insurance:</label>
+    <input
+      type="number"
+      id="medical-insurance"
+      name="medical-insurance"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="life-insurance">Life Insurance (incl. Takaful):</label>
+    <input
+      type="number"
+      id="life-insurance"
+      name="life-insurance"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="personal-accident">Personal Accident Insurance:</label>
+    <input
+      type="number"
+      id="personal-accident"
+      name="personal-accident"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="critical-illness">Critical Illness Coverage:</label>
+    <input
+      type="number"
+      id="critical-illness"
+      name="critical-illness"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="monthly-tabung-haji">Khairat Kematian / Burial Fund:</label>
+    <input
+      type="number"
+      id="monthly-tabung-haji"
+      name="monthly-tabung-haji"
+      oninput="calculateMonthly()"
+    />
+  </div>
+</div>
+
+        <!-- Personal Care & Beauty -->
+<div class="category-container" id="monthly-personal-care-container">
+  <h3>💅 Personal Care & Beauty</h3>
+
+  <div class="subcategory">
+    <label for="skincare">Skincare:</label>
+    <input
+      type="number"
+      id="skincare"
+      name="skincare"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="makeup">Makeup:</label>
+    <input
+      type="number"
+      id="makeup"
+      name="makeup"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="feminine-hygiene">Feminine hygiene products:</label>
+    <input
+      type="number"
+      id="feminine-hygiene"
+      name="feminine-hygiene"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="haircare">Haircare:</label>
+    <input
+      type="number"
+      id="haircare"
+      name="haircare"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="supplements">Supplements / vitamins:</label>
+    <input
+      type="number"
+      id="supplements"
+      name="supplements"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="haircut">Haircut or trim:</label>
+    <input
+      type="number"
+      id="haircut"
+      name="haircut"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="monthly-facial">Monthly facial / nails / waxing:</label>
+    <input
+      type="number"
+      id="monthly-facial"
+      name="monthly-facial"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="massage-therapy">Massage / body therapy:</label>
+    <input
+      type="number"
+      id="massage-therapy"
+      name="massage-therapy"
+      oninput="calculateMonthly()"
+    />
+  </div>
+</div>
+<!-- Monthly Health & Wellness -->
+<div class="category-container" id="monthly-health-wellness-container">
+  <h3>🏥 Health & Wellness</h3>
+  
+  <!-- Existing Subcategories -->
+  <div class="subcategory">
+    <label for="gym-membership">Gym or yoga membership:</label>
+    <input
+      type="number"
+      id="gym-membership"
+      name="gym-membership"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="supplements">Supplements:</label>
+    <input
+      type="number"
+      id="supplements"
+      name="supplements"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="therapy-sessions">Therapy / counselling sessions:</label>
+    <input
+      type="number"
+      id="therapy-sessions"
+      name="therapy-sessions"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <!-- Added Clinic & Hospitalization -->
+  <div class="subcategory">
+    <label for="clinic-visits">Clinic visits / General Consultation:</label>
+    <input
+      type="number"
+      id="clinic-visits"
+      name="clinic-visits"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="hospitalization">Hospitalization expenses:</label>
+    <input
+      type="number"
+      id="hospitalization"
+      name="hospitalization"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <!-- Added New Subcategories -->
+  <div class="subcategory">
+    <label for="dental-care">Dental Care:</label>
+    <input
+      type="number"
+      id="dental-care"
+      name="dental-care"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="vision-care">Vision Care:</label>
+    <input
+      type="number"
+      id="vision-care"
+      name="vision-care"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="chiropractic-care">Chiropractic Care:</label>
+    <input
+      type="number"
+      id="chiropractic-care"
+      name="chiropractic-care"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="prescription-medications">Prescription Medications:</label>
+    <input
+      type="number"
+      id="prescription-medications"
+      name="prescription-medications"
+      oninput="calculateMonthly()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="physical-therapy">Physical Therapy:</label>
+    <input
+      type="number"
+      id="physical-therapy"
+      name="physical-therapy"
+      oninput="calculateMonthly()"
+    />
+  </div>
+</div>
 
         <!-- Clothing & Accessories -->
-        <div class="category-container">
+       <div class="category-container" id="monthly-clothing-container">
           <h3>👗 Clothing & Accessories</h3>
           <div class="subcategory">
             <label for="wardrobe-topups">Monthly wardrobe top-ups:</label>
@@ -417,10 +608,19 @@
         </div>
 
         <!-- Lifestyle & Leisure -->
-        <div class="category-container">
+        <div class="category-container" id="lifestyle-container">
           <h3>🎉 Lifestyle & Leisure</h3>
           <div class="subcategory">
-            <label for="hobbies">Hobbies:</label>
+            <label for="streaming">Streaming services (Netflix):</label>
+            <input
+              type="number"
+              id="streaming"
+              name="streaming"
+              oninput="calculateMonthly()"
+            />
+          </div>
+          <div class="subcategory">
+            <label for="hobbies">Hobbies (Journaling/Gaming):</label>
             <input
               type="number"
               id="hobbies"
@@ -458,7 +658,7 @@
         </div>
 
         <!-- Subscriptions & Apps -->
-        <div class="category-container">
+        <div class="category-container" id="monthly-subscriptions-container">
           <h3>📱 Subscriptions & Apps</h3>
           <div class="subcategory">
             <label for="life360">Life360:</label>
@@ -526,7 +726,7 @@
         </div>
 
         <!-- Social & Gifting -->
-        <div class="category-container">
+       <div class="category-container" id="monthly-social-container">
           <h3>🎁 Social & Gifting</h3>
           <div class="subcategory">
             <label for="birthday-gifts">Birthday gifts:</label>
@@ -558,7 +758,7 @@
         </div>
 
         <!-- Parents / Family Support -->
-        <div class="category-container">
+        <div class="category-container" id="family-container">
           <h3>👨‍👩‍👧‍👦 Parents / Family Support</h3>
           <div class="subcategory">
             <label for="monthly-allowance">Monthly allowance:</label>
@@ -572,7 +772,7 @@
         </div>
 
         <!-- Savings & Investments -->
-        <div class="category-container">
+        <div class="category-container" id="savings-container">
           <h3>💰 Savings & Investments</h3>
           <div class="subcategory">
             <label for="emergency-fund">Emergency fund top-up:</label>
@@ -624,7 +824,7 @@
         </div>
 
         <!-- Pet Expenses -->
-        <div class="category-container">
+        <div class="category-container" id="petcare-container">
           <h3>🐾 Pet Expenses</h3>
           <div class="subcategory">
             <label for="pet-food">Pet food:</label>
@@ -701,7 +901,7 @@
         </div>
 
         <!-- Side Hustle / Business Tools -->
-        <div class="category-container">
+        <div class="category-container" id="sidehustle-container">
           <h3>💼 Side Hustle / Business Tools</h3>
           <div class="subcategory">
             <label for="capcut-pro">Capcut Pro:</label>
@@ -735,7 +935,7 @@
         </div>
 
         <!-- Charity & Zakat -->
-        <div class="category-container">
+        <div class="category-container" id="charity-zakat-container">
           <h3>🤲 Charity & Zakat</h3>
           <div class="subcategory">
             <label for="regular-sadaqah">Regular sadaqah:</label>
@@ -749,7 +949,7 @@
         </div>
 
         <!-- Baby Planning -->
-        <div class="category-container">
+        <div class="category-container" id="baby-planning-container">
           <h3>🤰 Baby Planning</h3>
           <div class="subcategory">
             <label for="prenatal-vitamins"
@@ -819,7 +1019,7 @@
         </div>
 
         <!-- Child Schooling -->
-        <div class="category-container">
+        <div class="category-container" id="child-schooling-container">
           <h3>👨‍👩‍👧‍👦 Child Schooling</h3>
           <div class="subcategory">
             <label for="school-fees">School fees:</label>
@@ -915,27 +1115,69 @@
         <!-- Annual Salary -->
         <div class="annual-salary-container center-salary">
   <label for="annual-salary">💵 Annual Salary:</label>
-  <input type="number" id="annual-salary" />
+  <input type="number" id="annual-salary" oninput="calculateAnnual()" />
 </div>
 
 <div class="category-wrapper">
-  <div class="category-container">
-  <h3>🏠 Housing</h3>
-  <div class="subcategory">
-    <label for="property-tax">Property tax (2x/year):</label>
-    <input type="number" id="property-tax" name="property-tax" oninput="calculateAnnual()" />
+  <div class="category-container" id="annual-housing-container">
+    <h3>🏠 Housing</h3>
+    <div class="subcategory">
+      <label for="property-tax">Assessment Tax:</label>
+      <input
+        type="number"
+        id="property-tax"
+        name="property-tax"
+        oninput="calculateAnnual()"
+      />
+    </div>
+    <div class="subcategory">
+      <label for="quit-rent">Quit Rent (Cukai Tanah):</label>
+      <input
+        type="number"
+        id="quit-rent"
+        name="quit-rent"
+        oninput="calculateAnnual()"
+      />
+    </div>
+    <div class="subcategory">
+      <label for="annual-home-insurance">Home Insurance:</label>
+      <input
+        type="number"
+        id="annual-home-insurance"
+        name="annual-home-insurance"
+        oninput="calculateAnnual()"
+      />
+    </div>
+    <div class="subcategory">
+      <label for="major-repairs">Major Repairs or Renovations:</label>
+      <input
+        type="number"
+        id="major-repairs"
+        name="major-repairs"
+        oninput="calculateAnnual()"
+      />
+    </div>
+    <div class="subcategory">
+      <label for="home-improvement">Home Improvement Costs:</label>
+      <input
+        type="number"
+        id="home-improvement"
+        name="home-improvement"
+        oninput="calculateAnnual()"
+      />
+    </div>
+    <div class="subcategory">
+      <label for="security-system-maintenance">Security System Maintenance:</label>
+      <input
+        type="number"
+        id="security-system-maintenance"
+        name="security-system-maintenance"
+        oninput="calculateAnnual()"
+      />
+    </div>
   </div>
-  <div class="subcategory">
-    <label for="annual-home-insurance">Annual home insurance (if paid yearly):</label>
-    <input type="number" id="annual-home-insurance" name="annual-home-insurance" oninput="calculateAnnual()" />
-  </div>
-  <div class="subcategory">
-    <label for="major-home-maintenance">Major home maintenance (repainting, pest control):</label>
-    <input type="number" id="major-home-maintenance" name="major-home-maintenance" oninput="calculateAnnual()" />
-  </div>
-</div>
 
-<div class="category-container">
+<div class="category-container" id="annual-car-container">
   <h3>🚗 Transportation</h3>
   <div class="subcategory">
     <label for="car-road-tax">Car road tax:</label>
@@ -955,7 +1197,7 @@
   </div>
 </div>
 
-<div class="category-container">
+<div class="category-container" id="annual-insurance-container">
   <h3>🛡️ Insurance & Protection</h3>
   <div class="subcategory">
     <label for="annual-premium-plans">Annual premium plans:</label>
@@ -967,31 +1209,115 @@
   </div>
 </div>
 
-<div class="category-container">
-  <h3>🩺 Health & Medical</h3>
+<!-- Annual Health & Wellness -->
+<div class="category-container" id="annual-health-wellness-container">
+  <h3>🏥 Health & Wellness (Annual)</h3>
+
+  <!-- Existing Subcategories -->
   <div class="subcategory">
     <label for="annual-medical-checkup">Annual medical checkup:</label>
-    <input type="number" id="annual-medical-checkup" name="annual-medical-checkup" oninput="calculateAnnual()" />
+    <input
+      type="number"
+      id="annual-medical-checkup"
+      name="annual-medical-checkup"
+      oninput="calculateAnnual()"
+    />
   </div>
+
   <div class="subcategory">
-    <label for="dental-scaling">Dental scaling and polishing:</label>
-    <input type="number" id="dental-scaling" name="dental-scaling" oninput="calculateAnnual()" />
+    <label for="specialist-consultation">Specialist consultations or treatments:</label>
+    <input
+      type="number"
+      id="specialist-consultation"
+      name="specialist-consultation"
+      oninput="calculateAnnual()"
+    />
   </div>
+
   <div class="subcategory">
-    <label for="eye-exam">Eye exam / new glasses:</label>
-    <input type="number" id="eye-exam" name="eye-exam" oninput="calculateAnnual()" />
+    <label for="health-insurance">Health insurance (if paid annually):</label>
+    <input
+      type="number"
+      id="health-insurance"
+      name="health-insurance"
+      oninput="calculateAnnual()"
+    />
   </div>
+
+  <!-- New Subcategories Added -->
+  <div class="subcategory">
+    <label for="dental-scaling-polishing">Dental scaling and polishing:</label>
+    <input
+      type="number"
+      id="dental-scaling-polishing"
+      name="dental-scaling-polishing"
+      oninput="calculateAnnual()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="eye-exam-glasses">Eye exam / new glasses:</label>
+    <input
+      type="number"
+      id="eye-exam-glasses"
+      name="eye-exam-glasses"
+      oninput="calculateAnnual()"
+    />
+  </div>
+
   <div class="subcategory">
     <label for="pap-smear">Pap smear / women's health screening:</label>
-    <input type="number" id="pap-smear" name="pap-smear" oninput="calculateAnnual()" />
+    <input
+      type="number"
+      id="pap-smear"
+      name="pap-smear"
+      oninput="calculateAnnual()"
+    />
   </div>
+
   <div class="subcategory">
     <label for="gynae-checkup">Gynae checkup:</label>
-    <input type="number" id="gynae-checkup" name="gynae-checkup" oninput="calculateAnnual()" />
+    <input
+      type="number"
+      id="gynae-checkup"
+      name="gynae-checkup"
+      oninput="calculateAnnual()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="annual-flu-vaccine">Flu Vaccine / Immunizations:</label>
+    <input
+      type="number"
+      id="annual-flu-vaccine"
+      name="annual-flu-vaccine"
+      oninput="calculateAnnual()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="preventive-health-screening">Preventive Health Screening:</label>
+    <input
+      type="number"
+      id="preventive-health-screening"
+      name="preventive-health-screening"
+      oninput="calculateAnnual()"
+    />
+  </div>
+
+  <div class="subcategory">
+    <label for="emergency-medical-fund">Emergency Medical Fund:</label>
+    <input
+      type="number"
+      id="emergency-medical-fund"
+      name="emergency-medical-fund"
+      oninput="calculateAnnual()"
+    />
   </div>
 </div>
 
-<div class="category-container">
+
+<div class="category-container" id="annual-personalcare-container">
   <h3>💇‍♀️ Personal Care & Beauty</h3>
   <div class="subcategory">
     <label for="hair-coloring">Hair coloring / chemical treatment:</label>
@@ -1011,7 +1337,7 @@
   </div>
 </div>
 
-<div class="category-container">
+<div class="category-container" id="annual-clothing-container">
   <h3>👗 Clothing & Accessories</h3>
   <div class="subcategory">
     <label for="baju-raya">Baju Raya / Festive outfits:</label>
@@ -1031,7 +1357,7 @@
   </div>
 </div>
 
-<div class="category-container">
+<div class="category-container" id="annual-social-container">
   <h3>🎉 Social & Gifting</h3>
   <div class="subcategory">
     <label for="duit-raya">Duit Raya / hampers:</label>
@@ -1051,7 +1377,7 @@
   </div>
 </div>
 
-<div class="category-container">
+<div class="category-container" id="annual-travel-container">
   <h3>✈️ Travel</h3>
   <div class="subcategory">
     <label for="flight-tickets">Flight tickets:</label>
@@ -1075,7 +1401,7 @@
   </div>
 </div>
 
-<div class="category-container">
+<div class="category-container" id="annual-education-container">
   <h3>📚 Education & Self-Development</h3>
   <div class="subcategory">
     <label for="online-course-fees">Online course fees:</label>
@@ -1095,7 +1421,7 @@
   </div>
 </div>
 
-<div class="category-container">
+<div class="category-container" id="annual-family-container">
   <h3>👨‍👩‍👧‍👦 Parents / Family</h3>
   <div class="subcategory">
     <label for="annual-health-checkups">Annual health checkups:</label>
@@ -1115,7 +1441,7 @@
   </div>
 </div>
 
-<div class="category-container">
+<div class="category-container" id="annual-savings-container">
   <h3>💰 Savings & Investments</h3>
   <div class="subcategory">
     <label for="lump-sum-asb">Lump sum ASB / Tabung Haji:</label>
@@ -1135,7 +1461,7 @@
   </div>
 </div>
 
-<div class="category-container">
+<div class="category-container" id="annual-pet-container">
   <h3>🐾 Pet Expenses</h3>
   <div class="subcategory">
     <label for="annual-vet-checkup">Annual vet checkup:</label>
@@ -1163,7 +1489,7 @@
   </div>
 </div>
 
-<div class="category-container">
+<div class="category-container" id="annual-charity-container">
   <h3>🤲 Charity & Zakat</h3>
   <div class="subcategory">
     <label for="regular-charity">Regular charity donations:</label>
@@ -1191,7 +1517,7 @@
   </div>
 </div>
         
-        <div class="category-container">
+<div class="category-container" id="annual-baby-container">
   <h3>🤱 Baby Planning</h3>
   <div class="subcategory">
     <label for="prenatal-scan">Detailed prenatal scan (3D/4D scan):</label>
@@ -1227,7 +1553,7 @@
   </div>
 </div>
 
-<div class="category-container">
+<div class="category-container" id="annual-schooling-container">
   <h3>🏫 Child Schooling</h3>
   <div class="subcategory">
     <label for="annual-school-fees">Annual school fees / registration:</label>
