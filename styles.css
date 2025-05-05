@@ -141,6 +141,7 @@ button:hover {
 button:active {
   transform: translateY(2px);
 }
+
 .center-salary {
   display: flex;
   flex-direction: column;
@@ -163,7 +164,7 @@ button:active {
 /* Wrap the entire container that holds all categories in a grid */
 .category-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 2 columns */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
   gap: 20px; /* space between the categories */
   margin: 0 auto;
   width: 100%; /* Ensure it takes full width */
@@ -173,31 +174,63 @@ button:active {
 .category-container {
   width: 100%; /* Make sure each container takes the full width available */
 }
-/* Make subcategories stack on small screens */
-@media (max-width: 600px) {
-  .subcategory {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  .subcategory label,
-  .subcategory input {
-    width: 100%;
-  }
-
-  .container-inputs label,
-  .container-inputs input {
-    max-width: 100%;
-  }
-
-  .category-wrapper {
-    grid-template-columns: 1fr; /* stack category boxes vertically */
-  }
+/* Style for Month and Year Dropdown */
+.date-selector select {
+  padding: 10px 20px; /* Same padding as tab buttons */
+  margin: 0 10px; /* Ensure spacing between the elements */
+  background-color: #d0f0c0; /* Light green for inactive state */
+  border: 1px solid #ddd; /* Border similar to tab */
+  border-radius: 4px; /* Rounded corners like tab buttons */
+  font-size: 0.9em; /* Slightly larger text size */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Tablet view: 2 columns */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .category-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* Hover effect for dropdown (similar to tab hover effect) */
+.date-selector select:hover {
+  background-color: #c8e6c9; /* Light hover color for dropdown */
 }
+
+/* Active state for selected dropdown (like the active tab) */
+.date-selector select:focus {
+  background-color: #4CAF50; /* Green color for active state */
+  color: white; /* White text when active */
+  transform: translateY(2px); /* Same effect for clicked state as tabs */
+}
+
+/* Ensures the dropdown matches the layout */
+.date-selector {
+  display: inline-flex; /* Keep it inline with other elements if necessary */
+  align-items: center;
+  justify-content: center;
+}
+
+.date-selector {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.date-selector select {
+  padding: 10px 20px; /* Match padding to tab style */
+  font-size: 0.9em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 160px; /* Set to match the width of the tabs */
+  cursor: pointer;
+  text-align: center;
+}
+.month-year-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.month-year-row p {
+  margin: 0;
+}
+
+
