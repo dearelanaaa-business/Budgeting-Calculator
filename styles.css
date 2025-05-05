@@ -173,3 +173,31 @@ button:active {
 .category-container {
   width: 100%; /* Make sure each container takes the full width available */
 }
+/* Make subcategories stack on small screens */
+@media (max-width: 600px) {
+  .subcategory {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .subcategory label,
+  .subcategory input {
+    width: 100%;
+  }
+
+  .container-inputs label,
+  .container-inputs input {
+    max-width: 100%;
+  }
+
+  .category-wrapper {
+    grid-template-columns: 1fr; /* stack category boxes vertically */
+  }
+}
+
+/* Tablet view: 2 columns */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .category-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
